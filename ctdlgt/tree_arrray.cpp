@@ -96,8 +96,13 @@ void nhap(Tree *t){
 		DataType x;
 		cout << "Nhap cha va nhan cua nut thu " << i << ": ";
 		cin >> par >> x;
-		// goi ham chen them 1 nut vao cay
-		insert(t,par,x);
+		if (full(t)){
+			cout << "Cay da day!!";
+			return;
+		} else {
+			// goi ham chen them 1 nut vao cay
+			insert(t,par,x);
+		}
 	}
 }
 
@@ -178,7 +183,7 @@ void preOrder(Tree *t,int n){
  *
  * @t: con tro den cay can duyet
  **/
-void inOrder(Tree *t){
+void inOrder(Tree *t,int n){
 }
 
 
@@ -187,7 +192,7 @@ void inOrder(Tree *t){
  *
  * @t: con tro den cay can duyet
  **/
-void postOrder(Tree *t){
+void postOrder(Tree *t,int n){
 
 }
 
