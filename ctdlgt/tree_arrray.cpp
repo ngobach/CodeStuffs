@@ -182,6 +182,7 @@ void preOrder(Tree *t,int n){
  * Ham duyet cay trung thu tu
  *
  * @t: con tro den cay can duyet
+ * viet tuong tu
  **/
 void inOrder(Tree *t,int n){
 }
@@ -191,6 +192,7 @@ void inOrder(Tree *t,int n){
  * Ham duyet cay hau thu tu
  *
  * @t: con tro den cay can duyet
+ * viet tuong tu
  **/
 void postOrder(Tree *t,int n){
 
