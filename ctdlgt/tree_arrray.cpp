@@ -177,6 +177,28 @@ void preOrder(Tree *t,int n){
 	}
 }
 
+/**
+ * Ham lay chieu cao cua 1 cay
+ *
+ * @t: con tro den cay can lay chieu cao
+ * @node: chi so cua cay can lay chieu cao (0 tuc la lay chieu cao tinh tu goc)
+ * @return chieu cao cua cay
+ */
+int getHeight(Tree *t,int node){
+	// chieu cao cua cay se = chieu cao cua cay con cao nhat + 1
+	// truoc tien phai tim chieu cao cua cay con cao nhat co nut cha la @node
+	int height = 0; // mac dinh chieu cao cua cay con cao nhat la 0
+	int child = lmc(t,node); // tim cay con dau tien
+	while (child != -1){
+		// van con cay con de kiem tra do cao
+		// lay gia tri lon hon giua chieu cao cua cay con cao nhat hien tai
+		// va chieu cao cua cay dang kiem tra
+		height = max(height,getHeight(t,child));
+		child = rs(t,child); // tim con tiep theo cua @node
+	}
+	return height + 1; // tra ve chieu cao cua cay nay la chieu cao cua cay con cao nhat + 1
+}
+
 
 /**
  * Ham duyet cay trung thu tu
@@ -209,4 +231,5 @@ int main(){
 	// duyet cay
 	cout << "Duyet cay tien thu tu la: " << endl;
 	preOrder(&t,0);
+	cout << endl << "Chieu cao cua cay la: " << getHeight(&t,0);
 }
