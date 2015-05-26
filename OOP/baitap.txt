@@ -1,0 +1,8 @@
+Viết ctr định nghĩa 1 lớp nhân viên với các thuộc tính 
+	mã nv, tên nv, ngày tháng năm sinh, năm công tác,mức lương,
+Các phương thức
+	Khởi tạo, nhập thông tin, hiển thị thông tin ra màn hình,
+Ctrình chính khởi tạo 1 mảng obj nhân viên, sau đó nhập thông tin cho mảng đối tượng nv, hiện thị thông tin ra m`h`
+
+2. Mở rộng hơn 1 chút, bổ sung thêm hàm hàm nhập nv bổ sung, là hàm tự do, đối số đầu vào là 1 đối tượng kiểu lớp nhân viên.
+Nhập thông tin cho đối tượng nv đc truyền vào, và hiển thị mảng ra màn hình.
