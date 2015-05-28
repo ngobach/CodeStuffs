@@ -65,7 +65,10 @@ Vector::Vector(Vector& vt){
 	clone(vt);
 }
 void Vector::operator=(Vector& vt){
-	clone(vt);
+	if (this == &vt){
+		cout << "Khong the tu gan cho chinh no!" << endl;
+	}else
+		clone(vt);
 }
 
 void Vector::display(){
