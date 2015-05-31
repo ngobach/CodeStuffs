@@ -31,10 +31,10 @@ TriangleP Triangle::check(){
 	TriangleP tp = {false,false,false};
 	int arr[] = {a,b,c};
 	sort(arr,arr+3);
-	if (arr[0]==arr[1]){
+	if (arr[0]==arr[2])
+		tp.deu = true;
+	else if (arr[0]==arr[1] || arr[1]==arr[2]){
 		tp.can = true;
-		if (arr[0]==arr[2])
-			tp.deu = true;
 	}
 	if (abs(arr[2]-sqrt(arr[0]*arr[0]+arr[1]*arr[1])) < EPS)
 		tp.vuong = true;
