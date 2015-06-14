@@ -4,7 +4,7 @@ using namespace std;
 
 const int WIDTH = 600;
 const int HEIGHT = 600;
-const double ROTATION_SPEED = 3.0; // toc do quay PISTON
+const double ROTATION_SPEED = 1.0; // toc do quay PISTON
 const double PISTON_RADIUS = 100;
 const double PISTON_LENGTH = 250;
 
@@ -65,10 +65,15 @@ void paint(){
 }
 
 void loop(){
+	int i=0,j;
 	while (!kbhit()){
+		j = 1-i;
+		setactivepage(i);
+		setvisualpage(j);
 		anim();
 		paint();
-		delay(16);
+		delay(1);
+		i = j;
 	}
 }
 
