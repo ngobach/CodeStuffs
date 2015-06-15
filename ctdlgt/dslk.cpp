@@ -12,6 +12,7 @@ class LinkedList{
 		Node* head;
 	public:
 		LinkedList();
+		void input();
 		void insert(int);
 		void insertAt(int,int);
 		void deleteAt(int);
@@ -24,6 +25,18 @@ class LinkedList{
 LinkedList::LinkedList(){
 	count = 0;
 	head = NULL;
+}
+
+void LinkedList::input(){
+	int n,x;
+	cout << "Nhap so luong phan tu muon then vao:";
+	cin >> n;
+	for (int i=0;i<n;i++){
+		cout << "Nhap so muon them thu " << i+1 << ": ";
+		cin >> x;
+		insert(x);
+	}
+	count += n;
 }
 
 void LinkedList::insert(int val){
@@ -65,10 +78,13 @@ void LinkedList::deleteAt(int pos){
 void LinkedList::display(){
 	Node *n = head;
 	while (n!=NULL){
-		cout << n->val << ", ";
+		cout << n->val;
 		n = n->next;
+		if (n!=NULL)
+			cout << ", ";
+		else
+			cout << endl;
 	}
-	cout << endl;
 }
 
 void LinkedList::insertAt(int pos,int val){
@@ -140,10 +156,18 @@ void test3(){
 	ll.insert(6);
 	cout << "Phan tu thu 4: " << ll.get(4) << endl;
 }
+void test4(){
+	LinkedList ll;
+	ll.insert(99);
+	ll.input();
+	ll.insert(88);
+	ll.display();
+}
 int main(){
 	cout << "TEST1:" << endl;test1();
 	cout << "TEST2:" << endl;test2();
 	cout << "TEST3:" << endl;test3();
+	cout << "TEST4:" << endl;test4();
 	return 0;
 }
 
